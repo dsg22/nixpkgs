@@ -72,6 +72,20 @@ stdenv.mkDerivation rec {
       url = "https://gitlab.gnome.org/GNOME/mutter/commit/c9c53cb55fd6e782c50f36da1e2adbf28111a660.patch";
       sha256 = "0iwjlbr8j0icigmilpghlkcyg4hll9dm0mcaj8lvi7qxrgjrmczr";
     })
+    # Fix crash when pressing ctrl-super: https://gitlab.gnome.org/GNOME/mutter/issues/823
+    (fetchpatch {
+      url = "https://gitlab.gnome.org/GNOME/mutter/commit/0706e021f5bd82cf4c9b2c0d2916d272f3cba406.patch";
+      sha256 = "0i4ixr419jggrd17gxxs45jnx131lnp8wkkhhygqsrpq8941sdw6";
+    })
+    (fetchpatch {
+      url = "https://gitlab.gnome.org/GNOME/mutter/commit/76f2579e442d8ad0a3b8b644daab7c72a585506b.patch";
+      sha256 = "0c3ls624k9f4mqrrbv8ng0slvm31l0li6ciqn04qd4yi18plnldy";
+    })
+    # Avoid crashing any apps on X11 when restarting: https://gitlab.gnome.org/GNOME/mutter/merge_requests/808
+    (fetchpatch {
+      url = "https://gitlab.gnome.org/GNOME/mutter/commit/f352c3d79da99e961341c1d2b5dd334dcade0271.patch";
+      sha256 = "1drn8wjbkj903jxay5wxq163i9ahp558sjl2bc3fi1qs90xj6cn2";
+    })
    # TODO: submit upstream
    ./0001-build-use-get_pkgconfig_variable-for-sysprof-dbusdir.patch
     (substituteAll {
