@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   patches = [
     (fetchpatch {
       name = "CVE-2017-2887";
-      url = "https://hg.libsdl.org/SDL_image/raw-diff/318484db0705/IMG_xcf.c";
+      url = "https://sources.debian.org/data/main/s/sdl-image1.2/1.2.12-10+deb10u1/debian/patches/CVE-2017-2887.patch";
       sha256 = "140dyszz9hkpgwjdiwp1b7jdd8f8l5d862xdaf3ml4cimga1h5kv";
     })
   ];
