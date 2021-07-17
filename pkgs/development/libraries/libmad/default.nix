@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
     })
     (fetchpatch {
       name = "CVE-2017-8374.patch";
-      url = "https://github.com/openwrt/packages/raw/openwrt-19.07/libs/libmad/patches/101-CVE-2017-8374-length-check.patch";
+      url = "https://gitlab.nic.cz/davidjb/turris-os-packages/-/raw/0ce1b9d470d68b42a71d57d11c4db488c69df739/libs/libmad/patches/101-cve-2017-8374-length-check.patch?inline=false";
       sha256 = "1j1ssxwmx9nfahzl62frbzck93xrjc2v3w30c12vmk29iflf1890";
     })
   ]
