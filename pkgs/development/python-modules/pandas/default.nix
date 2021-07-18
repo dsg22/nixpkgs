@@ -91,6 +91,8 @@ buildPythonPackage rec {
     "test_from_coo"
     # AssertionError: No common DType exists for the given inputs
     "test_comparison_invalid"
+    # https://github.com/pandas-dev/pandas/issues/41740
+    "test_rolling_var_numerical_issues"
   ] ++ lib.optionals stdenv.isDarwin [
     "test_locale"
     "test_clipboard"
