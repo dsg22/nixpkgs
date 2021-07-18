@@ -108,6 +108,7 @@ buildPythonPackage rec {
   ] ++ lib.optionals stdenv.isDarwin [
     "test_locale"
     "test_clipboard"
+    "test_rolling_var_numerical_issues"
   ];
 
   # Tests have relative paths, and need to reference compiled C extensions
