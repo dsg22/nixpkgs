@@ -105,6 +105,8 @@ buildPythonPackage rec {
     "test_missing_required_dependency"
     # AssertionError with 1.2.3
     "test_from_coo"
+    # https://github.com/pandas-dev/pandas/issues/41740
+    "test_rolling_var_numerical_issues"
   ] ++ lib.optionals stdenv.isDarwin [
     "test_locale"
     "test_clipboard"
