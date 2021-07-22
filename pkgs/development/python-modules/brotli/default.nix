@@ -9,7 +9,7 @@ buildPythonPackage rec {
     owner = "google";
     repo = pname;
     rev = "v${version}";
-    sha256 = "1rdp9rx197q467ixp53g4cgc3jbsdaxr62pz0a8ayv2lvm944azh";
+    sha256 = "0idl29gghsbi1gikp86j423hdq30jcwglwi9mzvwg25db4rlwy02";
     # for some reason, the test data isn't captured in releases, force a git checkout
     deepClone = true;
   };
