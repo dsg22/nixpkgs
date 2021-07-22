@@ -63,7 +63,7 @@ let
 
         src = fetchgit {
           url = "https://github.com/qt/qtwebengine.git";
-          sha256 = "1vdgxfbmx4z4qrm2g61dl64gqn3fv5f83jwpp7h1gyfx5z2qvfmv";
+          sha256 = "0j71r6lvih7ar25scxgqq7ic173wlkhrckclsiz1xvyv3580q7p6";
           inherit rev branchName;
           fetchSubmodules = true;
           leaveDotGit = true;
