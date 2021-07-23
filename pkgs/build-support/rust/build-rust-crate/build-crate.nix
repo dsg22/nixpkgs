@@ -15,6 +15,7 @@
         "--remap-path-prefix=$NIX_BUILD_TOP=/"
         (mkRustcDepArgs dependencies crateRenames)
         (mkRustcFeatureArgs crateFeatures)
+        "-C target-cpu=skylake"
       ] ++ lib.optionals (stdenv.hostPlatform != stdenv.buildPlatform) [
         "--target" (rust.toRustTargetSpec stdenv.hostPlatform)
       ] ++ extraRustcOpts
