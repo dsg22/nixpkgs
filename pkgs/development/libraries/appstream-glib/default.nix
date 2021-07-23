@@ -1,5 +1,6 @@
 { lib, stdenv
 , fetchFromGitHub
+, fetchurl
 , substituteAll
 , docbook_xml_dtd_42
 , docbook_xsl
