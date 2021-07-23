@@ -74,6 +74,7 @@ buildPythonPackage rec {
     "test_filename_without_dir"
     "test_overwrite"
     "test_options"
+    "test_type1mm_inputs"
   ];
 
   meta = with lib; {
