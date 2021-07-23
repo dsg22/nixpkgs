@@ -15,6 +15,7 @@
         "--remap-path-prefix=$NIX_BUILD_TOP=/"
         (mkRustcDepArgs dependencies crateRenames)
         (mkRustcFeatureArgs crateFeatures)
+        "-C target-cpu=skylake"
       ] ++ extraRustcOpts
       ++ lib.optional (stdenv.hostPlatform != stdenv.buildPlatform) "--target ${rust.toRustTargetSpec stdenv.hostPlatform} -C linker=${stdenv.hostPlatform.config}-gcc"
       # since rustc 1.42 the "proc_macro" crate is part of the default crate prelude
