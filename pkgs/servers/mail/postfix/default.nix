@@ -29,7 +29,7 @@ in stdenv.mkDerivation rec {
   version = "3.6.0";
 
   src = fetchurl {
-    url = "ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/official/${pname}-${version}.tar.gz";
+    url = "https://ftp.cs.uu.nl/mirror/postfix/postfix-release/official/${pname}-${version}.tar.gz";
     sha256 = "sha256-d0YolNdnHWPL5fwnM/lBCIUVptZxCLnxgIt9rjfoPC4=";
   };
 
