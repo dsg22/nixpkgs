@@ -1,7 +1,7 @@
 { lib, stdenv, fetchgit, fetchFromGitHub, fetchFromGitLab, fetchpatch, cmake, pkg-config, makeWrapper, python27, python3, retroarch
 , alsa-lib, fluidsynth, curl, hidapi, libGLU, gettext, glib, gtk2, portaudio, SDL, SDL_net, SDL2, SDL2_image, libGL
 , ffmpeg, pcre, libevdev, libpng, libjpeg, libzip, udev, libvorbis, snappy, which, hexdump
-, miniupnpc, sfml, xorg, zlib, nasm, libpcap, boost, icu, openssl
+, miniupnpc, sfml, xorg, zlib, nasm, libpcap, boost, icu, openssl, cairo
 , buildPackages }:
 
 let
@@ -536,6 +536,22 @@ in with lib.licenses;
     dontConfigure = true;
     makeFlags = [ "EXTERNAL_ZLIB=1" ];
     depsBuildBuild = [ buildPackages.stdenv.cc ];
+  };
+
+  higan = let bname = "higan"; in mkLibRetroCore {
+    core = bname + "-accuracy";
+    src = fetchRetro {
+      repo = bname;
+      rev = "c9d631a7e25ebac2c1175eabf240db6af0a75987";
+      sha256 = "0423wmsbia12r6m463fcxg5dfl334nflgh4wjr1yr727haha1p6p";
+    };
+    description = "higan is a multi-system emulator focused on accuracy and preservation.";
+    extraBuildInputs = [ SDL2 xorg.libX11 cairo ];
+    extraNativeBuildInputs = [ pkg-config ];
+    license = gpl3;
+    makefile = "GNUmakefile";
+    makeFlags = [ "platform=linux" ];
+    preBuild = "cd higan";
   };
 
   mame = mkLibRetroCore {

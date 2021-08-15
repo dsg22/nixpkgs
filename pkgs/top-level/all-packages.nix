@@ -28340,6 +28340,7 @@ with pkgs;
       ++ optional (cfg.enableGW or false) gw
       ++ optional (cfg.enableHandy or false) handy
       ++ optional (cfg.enableHatari or false) hatari
+      ++ optional (cfg.enableHigan or false) higan
       ++ optional (cfg.enableMAME or false) mame
       ++ optional (cfg.enableMAME2000 or false) mame2000
       ++ optional (cfg.enableMAME2003 or false) mame2003
