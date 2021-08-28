@@ -2,6 +2,7 @@
 
   # Content-addressable Nix mirrors.
   hashedMirrors = [
+    "http://127.0.0.1:8000"
     "http://tarballs.nixos.org"
   ];
 
