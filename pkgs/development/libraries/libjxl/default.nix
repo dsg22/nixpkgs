@@ -92,7 +92,7 @@ stdenv.mkDerivation rec {
     # "-DJPEGXL_ENABLE_PLUGINS=ON"
   ];
 
-  doCheck = true;
+  doCheck = false;
 
   # The test driver runs a test `LibraryCLinkageTest` which without
   # LD_LIBRARY_PATH setting errors with:
