@@ -44,7 +44,7 @@
 # Hardening
 , graphene-hardened-malloc
 # Whether to use graphene-hardened-malloc
-, useHardenedMalloc ? true
+, useHardenedMalloc ? graphene-hardened-malloc != null && builtins.elem stdenv.system graphene-hardened-malloc.meta.platforms
 
 # Whether to disable multiprocess support
 , disableContentSandbox ? false
