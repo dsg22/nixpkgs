@@ -8,7 +8,6 @@
 , gnutls
 , openssl
 , libevent
-, lttng-ust
 , gst_all_1
 , gtest
 , graphviz
@@ -45,9 +44,6 @@ stdenv.mkDerivation {
     # cam integration
     libevent
 
-    # lttng tracing
-    lttng-ust
-
     gtest
   ];
 
@@ -65,7 +61,7 @@ stdenv.mkDerivation {
     openssl
   ];
 
-  mesonFlags = [ "-Dv4l2=true" "-Dqcam=disabled" ];
+  mesonFlags = [ "-Dv4l2=true" "-Dqcam=disabled" "-Dtracing=disabled" ];
 
   # Fixes error on a deprecated declaration
   NIX_CFLAGS_COMPILE = "-Wno-error=deprecated-declarations";
