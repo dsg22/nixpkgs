@@ -58,6 +58,7 @@ buildPythonPackage rec {
   preCheck = ''
     # don't test bash builtins
     rm testing/test_argcomplete.py
+    rm testing/acceptance_test.py
   '';
 
   # Ignored file https://github.com/pytest-dev/pytest/pull/5605#issuecomment-522243929
@@ -66,7 +67,8 @@ buildPythonPackage rec {
     runHook preCheck
     $out/bin/py.test -x testing/ \
       --ignore=testing/test_junitxml.py \
-      -k "not test_collect_pyargs_with_testpaths and not test_missing_required_plugins"
+      --ignore=testing/acceptance_test.py \
+      -k "not test_collect_pyargs_with_testpaths and not test_missing_required_plugins and not test_internal_errors_propagate_to_controller"
 
     # tests leave behind unreproducible pytest binaries in the output directory, remove:
     find $out/lib -name "*-pytest-${version}.pyc" -delete
