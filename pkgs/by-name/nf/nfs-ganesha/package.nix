@@ -16,6 +16,7 @@
   flex,
   nfs-utils,
   acl,
+  useCeph ? false,
   ceph,
 }:
 
